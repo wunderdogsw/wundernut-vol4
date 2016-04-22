@@ -1,0 +1,95 @@
+body {
+    background: url('../img/dark_embroidery.png');
+}
+
+.start-button {
+    border: solid 1px #ccc;
+    cursor: pointer;
+    background-color: #000000;
+    color: white;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 2px 2px 4px 0px rgba(34,34,34,1);
+    -moz-box-shadow: 2px 2px 4px 0px rgba(34,34,34,1);
+    box-shadow: 2px 2px 4px 0px rgba(34,34,34,1);
+    padding: 5px;
+    display: inline-block;
+    float: left;
+}
+
+.cube {
+    clear: both;
+    float: left;
+
+    padding-top: 10px;
+}
+
+table {
+    margin-left: 50px;
+    transform: rotateX(50deg) rotateZ(-40deg) rotateY(0deg);
+    font-size: 20px;
+    text-transform: uppercase;
+    opacity: 0.75;
+
+    margin-top: -20px;
+}
+
+td {
+    background-color: #b6c857;
+    padding: 10px;
+    transition: all 0.15s ease-in-out;
+}
+
+.step {
+    display: inline-block;
+}
+
+.current {
+    background-color: #70e520;
+}
+
+.visited {
+    background-color: #cccccc;
+}
+
+.next {
+    background-color: #e5e500;
+}
+
+.other-data {
+    float: left;
+    margin-left: 60px;
+    width: 330px;
+    color: #ffffff;
+}
+
+.other-data div {
+    margin-bottom: 5px;
+}
+
+.possible-words, .steps-to-check, .letters, .result {
+    border: solid 1px #cccccc;
+    min-height: 20px;
+    padding: 1px 0 0 1px;
+    background: #ffffff;
+    color: #000000;
+}
+
+.blob {
+    background-color: #b6c857;
+    height: 18px;
+    width: 9px;
+    float: left;
+    margin-right: 1px;
+    margin-bottom: 1px;
+}
+
+.blob.small {
+    width: 4px;
+    height: 6px;
+}
+
+.clear-both {
+    clear: both;
+}

@@ -1,0 +1,705 @@
+<html>
+  <head>
+    <title>Cube</title>
+    <link rel="stylesheet" type="text/css" href="css/trans.css">
+    <style>
+      .cube-area {
+        padding: 50px;
+      }
+      .wrap {
+        perspective: 800px;
+        perspective-origin: 50% 100px;
+      }
+      .cube {
+        position: relative;
+        width: 200px;
+        transform-style: preserve-3d;
+      }
+      .cube .wall {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border: solid 1px gray;
+      }
+      
+      .cube-back {
+        transform: translateZ(-100px) rotateY(180deg);
+      }
+      .cube-right {
+        transform: rotateY(-270deg) translateX(100px);
+        transform-origin: top right;
+      }
+      .cube-left {
+        transform: rotateY(270deg) translateX(-100px);
+        transform-origin: center left;
+      }
+      .cube-top {
+        transform: rotateX(-90deg) translateY(-100px);
+        transform-origin: top center;
+      }
+      .cube-bottom {
+        transform: rotateX(90deg) translateY(100px);
+        transform-origin: bottom center;
+      }
+      .cube-front {
+        transform: translateZ(100px);
+      }
+
+      .cube .wall {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+       /* border: solid 1px gray;*/
+        backface-visibility: hidden;
+      }
+      
+      .cell {
+        position: absolute;
+        transform-style: preserve-3d;
+      }
+      .cell .side {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border: solid 1px black;
+      }
+
+      .back {
+        transform: translateZ(-25px) rotateY(180deg);
+      }
+      .right {
+        transform: rotateY(-270deg) translateX(25px);
+        transform-origin: top right;
+      }
+      .left {
+        transform: rotateY(270deg) translateX(-25px);
+        transform-origin: center left;
+      }
+      .top {
+        transform: rotateX(-90deg) translateY(-25px);
+        transform-origin: top center;
+      }
+      .bottom {
+        transform: rotateX(90deg) translateY(25px);
+        transform-origin: bottom center;
+      }
+      .front {
+        transform: translateZ(25px);
+      }
+
+      @keyframes spin {
+        from { transform: rotateY(0); }
+        to { transform: rotateY(360deg); }
+      }
+
+
+      .text {
+        position: absolute;
+        font-size: 40px;
+        color: green;
+      }
+
+      @keyframes spin-backwards {
+        from { transform: rotateY(0); }
+        to { transform: rotateY(-360deg); }
+      }
+
+      .cube-spinZ {
+        animation: spin 15s infinite linear;
+      }
+
+      .spin-bwZ {
+        animation: spin-backwards 15s infinite linear;
+      }
+
+      #block-111.cell .side {
+        background-color: rgba(255,0,0,0.4);
+      }
+     </style>
+  </head>
+  <body>
+    <div class="cube-area">
+      <div class="wrap">
+        <div class="cube cube-spin">
+<div class="cell x0y0z0" id="block-000">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">A</div>
+ </div>
+<div class="cell x0y0z1" id="block-001">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">J</div>
+ </div>
+<div class="cell x0y0z2" id="block-002">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">F</div>
+ </div>
+<div class="cell x0y0z3" id="block-003">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">E</div>
+ </div>
+<div class="cell x0y1z0" id="block-010">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">A</div>
+ </div>
+<div class="cell x0y1z1" id="block-011">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">P</div>
+ </div>
+<div class="cell x0y1z2" id="block-012">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">U</div>
+ </div>
+<div class="cell x0y1z3" id="block-013">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">W</div>
+ </div>
+<div class="cell x0y2z0" id="block-020">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">O</div>
+ </div>
+<div class="cell x0y2z1" id="block-021">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">G</div>
+ </div>
+<div class="cell x0y2z2" id="block-022">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">M</div>
+ </div>
+<div class="cell x0y2z3" id="block-023">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">R</div>
+ </div>
+<div class="cell x0y3z0" id="block-030">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">M</div>
+ </div>
+<div class="cell x0y3z1" id="block-031">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">N</div>
+ </div>
+<div class="cell x0y3z2" id="block-032">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">X</div>
+ </div>
+<div class="cell x0y3z3" id="block-033">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">K</div>
+ </div>
+<div class="cell x1y0z0" id="block-100">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">D</div>
+ </div>
+<div class="cell x1y0z1" id="block-101">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">N</div>
+ </div>
+<div class="cell x1y0z2" id="block-102">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">S</div>
+ </div>
+<div class="cell x1y0z3" id="block-103">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">I</div>
+ </div>
+<div class="cell x1y1z0" id="block-110">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">F</div>
+ </div>
+<div class="cell x1y1z1" id="block-111">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">O</div>
+ </div>
+<div class="cell x1y1z2" id="block-112">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">D</div>
+ </div>
+<div class="cell x1y1z3" id="block-113">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">S</div>
+ </div>
+<div class="cell x1y2z0" id="block-120">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">J</div>
+ </div>
+<div class="cell x1y2z1" id="block-121">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">G</div>
+ </div>
+<div class="cell x1y2z2" id="block-122">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">E</div>
+ </div>
+<div class="cell x1y2z3" id="block-123">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">I</div>
+ </div>
+<div class="cell x1y3z0" id="block-130">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">W</div>
+ </div>
+<div class="cell x1y3z1" id="block-131">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">K</div>
+ </div>
+<div class="cell x1y3z2" id="block-132">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">P</div>
+ </div>
+<div class="cell x1y3z3" id="block-133">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">R</div>
+ </div>
+<div class="cell x2y0z0" id="block-200">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">E</div>
+ </div>
+<div class="cell x2y0z1" id="block-201">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">Q</div>
+ </div>
+<div class="cell x2y0z2" id="block-202">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">M</div>
+ </div>
+<div class="cell x2y0z3" id="block-203">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">F</div>
+ </div>
+<div class="cell x2y1z0" id="block-210">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">R</div>
+ </div>
+<div class="cell x2y1z1" id="block-211">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">K</div>
+ </div>
+<div class="cell x2y1z2" id="block-212">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">I</div>
+ </div>
+<div class="cell x2y1z3" id="block-213">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">D</div>
+ </div>
+<div class="cell x2y2z0" id="block-220">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">D</div>
+ </div>
+<div class="cell x2y2z1" id="block-221">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">M</div>
+ </div>
+<div class="cell x2y2z2" id="block-222">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">I</div>
+ </div>
+<div class="cell x2y2z3" id="block-223">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">R</div>
+ </div>
+<div class="cell x2y3z0" id="block-230">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">E</div>
+ </div>
+<div class="cell x2y3z1" id="block-231">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">O</div>
+ </div>
+<div class="cell x2y3z2" id="block-232">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">S</div>
+ </div>
+<div class="cell x2y3z3" id="block-233">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">D</div>
+ </div>
+<div class="cell x3y0z0" id="block-300">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">R</div>
+ </div>
+<div class="cell x3y0z1" id="block-301">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">T</div>
+ </div>
+<div class="cell x3y0z2" id="block-302">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">S</div>
+ </div>
+<div class="cell x3y0z3" id="block-303">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">L</div>
+ </div>
+<div class="cell x3y1z0" id="block-310">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">D</div>
+ </div>
+<div class="cell x3y1z1" id="block-311">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">K</div>
+ </div>
+<div class="cell x3y1z2" id="block-312">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">P</div>
+ </div>
+<div class="cell x3y1z3" id="block-313">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">I</div>
+ </div>
+<div class="cell x3y2z0" id="block-320">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">S</div>
+ </div>
+<div class="cell x3y2z1" id="block-321">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">P</div>
+ </div>
+<div class="cell x3y2z2" id="block-322">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">O</div>
+ </div>
+<div class="cell x3y2z3" id="block-323">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">I</div>
+ </div>
+<div class="cell x3y3z0" id="block-330">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">J</div>
+ </div>
+<div class="cell x3y3z1" id="block-331">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">Q</div>
+ </div>
+<div class="cell x3y3z2" id="block-332">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">D</div>
+ </div>
+<div class="cell x3y3z3" id="block-333">
+   <div class="side front"></div>
+   <div class="side back"></div>
+   <div class="side top"></div>
+   <div class="side bottom"></div>
+   <div class="side left"></div>
+   <div class="side right"></div>
+   <div class="text spin-bw">T</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

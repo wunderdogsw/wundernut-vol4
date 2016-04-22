@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>How to solve a letter cube</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/runner.js"></script>
+    <style>
+      body { margin: 0; }
+      canvas {
+         width: 100%;
+         height: 100%;
+         margin: 5px 0 5px 50px;
+         float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="start-button" onclick="runVisualization()">Run visualization</div>
+    <div class="cube">
+    <table>
+      <tr><td id="block-000">a</td><td id="block-001">j</td><td id="block-002">f</td><td id="block-003">e</tr>
+      <tr><td id="block-010">a</td><td id="block-011">p</td><td id="block-012">u</td><td id="block-013">w</tr>
+      <tr><td id="block-020">o</td><td id="block-021">g</td><td id="block-022">m</td><td id="block-023">r</tr>
+      <tr><td id="block-030">m</td><td id="block-031">n</td><td id="block-032">x</td><td id="block-033">k</tr>
+    </table>
+    <table>
+      <tr><td id="block-100">d</td><td id="block-101">n</td><td id="block-102">s</td><td id="block-103">i</tr>
+      <tr><td id="block-110">f</td><td id="block-111">o</td><td id="block-112">d</td><td id="block-113">s</tr>
+      <tr><td id="block-120">j</td><td id="block-121">e</td><td id="block-122">g</td><td id="block-123">i</tr>
+      <tr><td id="block-130">w</td><td id="block-131">k</td><td id="block-132">p</td><td id="block-133">r</tr>
+    </table>
+    <table>
+      <tr><td id="block-200">e</td><td id="block-201">q</td><td id="block-202">m</td><td id="block-203">f</tr>
+      <tr><td id="block-210">r</td><td id="block-211">k</td><td id="block-212">i</td><td id="block-213">d</tr>
+      <tr><td id="block-220">d</td><td id="block-221">m</td><td id="block-222">i</td><td id="block-223">r</tr>
+      <tr><td id="block-230">e</td><td id="block-231">o</td><td id="block-232">s</td><td id="block-033">d</tr>
+    </table>
+    <table>
+      <tr><td id="block-300">r</td><td id="block-301">t</td><td id="block-302">s</td><td id="block-303">l</tr>
+      <tr><td id="block-310">d</td><td id="block-311">k</td><td id="block-312">p</td><td id="block-313">i</tr>
+      <tr><td id="block-320">s</td><td id="block-321">p</td><td id="block-322">o</td><td id="block-323">i</tr>
+      <tr><td id="block-330">j</td><td id="block-331">q</td><td id="block-332">d</td><td id="block-033">t</tr>
+    </table>
+    </div>
+
+    <script src="js/three.min.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/cube.js"></script>
+
+    <div class="other-data">
+      <div>Step: <div class="step"></div></div>
+      <div>Letters in current path: <div class="letters"></div></div>
+      <div>Found words:<div class="result"></div></div>
+      <div>Possible words: <div class="possible-words"></div></div>
+      <div>Work queue: <div class="steps-to-check"></div></div>
+    </div>
+  </body>
+</html>
